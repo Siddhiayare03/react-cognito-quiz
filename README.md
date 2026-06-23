@@ -1,16 +1,23 @@
-# React + Vite
+Project Title:
+AWS React Cognito Quiz Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+User Authentication with AWS Cognito
+React + Vite Frontend
+AWS Amplify Hosting
+CI/CD Deployment
+Quiz Engine
 
-Currently, two official plugins are available:
+Architecture Diagram
+Development and deployment flow 
+<img width="620" height="118" alt="Screenshot 2026-06-23 220116" src="https://github.com/user-attachments/assets/c6cf1157-bd92-44a2-b54a-40d1d176edeb" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+Runtime Architecture 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<img width="734" height="107" alt="image" src="https://github.com/user-attachments/assets/c9b6a968-70b2-48b3-8cba-ae582beb9f29" />
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Live Demo Link
+https://main.d1x5b3r2rdj4mq.amplifyapp.com/
