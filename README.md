@@ -1,4 +1,4 @@
-Project Title
+Project Title:
 AWS React Cognito Quiz Application
 
 Features
