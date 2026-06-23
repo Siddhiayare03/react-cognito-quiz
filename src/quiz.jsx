@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const questions = [
   {
@@ -37,6 +37,29 @@ function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(15);
+
+  useEffect(() => {
+    if (showScore) return;
+
+    if (timeLeft === 0) {
+      const nextQuestion = currentQuestion + 1;
+
+      if (nextQuestion < questions.length) {
+        setCurrentQuestion(nextQuestion);
+        setTimeLeft(15);
+      } else {
+        setShowScore(true);
+      }
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setTimeLeft(timeLeft - 1);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [timeLeft, currentQuestion, showScore]);
 
   const handleAnswer = (selectedOption) => {
     if (selectedOption === questions[currentQuestion].answer) {
@@ -47,25 +70,65 @@ function Quiz() {
 
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
+      setTimeLeft(15);
     } else {
       setShowScore(true);
     }
   };
 
+  const progress =
+    ((currentQuestion + 1) / questions.length) * 100;
+
   return (
-    <div>
+    <div style={{ textAlign: "center", padding: "20px" }}>
       {showScore ? (
         <div>
           <h2>Quiz Completed 🎉</h2>
-          <h3>
+          <p>
             Your Score: {score} / {questions.length}
-          </h3>
+          </p>
+
+          <button
+            onClick={() => {
+              setCurrentQuestion(0);
+              setScore(0);
+              setShowScore(false);
+              setTimeLeft(15);
+            }}
+            style={{
+              padding: "10px 20px",
+              cursor: "pointer"
+            }}
+          >
+            Restart Quiz
+          </button>
         </div>
       ) : (
         <div>
           <h2>
             Question {currentQuestion + 1} of {questions.length}
           </h2>
+
+          <div
+            style={{
+              width: "100%",
+              backgroundColor: "#ddd",
+              height: "15px",
+              borderRadius: "10px",
+              marginBottom: "20px"
+            }}
+          >
+            <div
+              style={{
+                width: `${progress}%`,
+                backgroundColor: "green",
+                height: "15px",
+                borderRadius: "10px"
+              }}
+            ></div>
+          </div>
+
+          <h3>⏳ Time Left: {timeLeft}s</h3>
 
           <h3>{questions[currentQuestion].question}</h3>
 
