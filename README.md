@@ -1,5 +1,5 @@
 Project Title
-React Cognito Quiz Application
+AWS React Cognito Quiz Application
 
 Features
 User Authentication with AWS Cognito
