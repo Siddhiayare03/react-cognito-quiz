@@ -10,7 +10,7 @@ Quiz Engine
 
 Architecture Diagram
 Development and deployment flow 
-<img width="620" height="118" alt="Screenshot 2026-06-23 220116" src="https://github.com/user-attachments/assets/c6cf1157-bd92-44a2-b54a-40d1d176edeb" />
+<img width="518" height="84" alt="image" src="https://github.com/user-attachments/assets/da41a091-f3fe-40ff-9d44-ec6df3897850" />
 
 
 Runtime Architecture 
